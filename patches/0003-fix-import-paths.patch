@@ -1,0 +1,27 @@
+From 0f1f5ee7ed31aa5eb4696683d666b3e4098a7679 Mon Sep 17 00:00:00 2001
+From: Marcel <me@m4rc3l.de>
+Date: Thu, 2 May 2024 23:41:50 +0200
+Subject: [PATCH] fix import paths
+
+---
+ Common/Network/FileTransporter/src/manager.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Common/Network/FileTransporter/src/manager.cpp b/Common/Network/FileTransporter/src/manager.cpp
+index 78aa9cd01f..0ab9a7f3a3 100644
+--- a/Common/Network/FileTransporter/src/manager.cpp
++++ b/Common/Network/FileTransporter/src/manager.cpp
+@@ -32,8 +32,8 @@
+ 
+ #include <list>
+ #include "./../include/manager.h"
+-#include "./../../../core/DesktopEditor/graphics/TemporaryCS.h"
+-#include "./../../../core/DesktopEditor/graphics/BaseThread.h"
++#include "./../../DesktopEditor/graphics/TemporaryCS.h"
++#include "./../../DesktopEditor/graphics/BaseThread.h"
+ 
+ namespace ASC
+ {
+-- 
+2.42.0
+

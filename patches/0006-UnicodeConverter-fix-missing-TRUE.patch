@@ -1,0 +1,25 @@
+From 499944c7194cf4ae540e6c2dfd2e7a136f311ee7 Mon Sep 17 00:00:00 2001
+From: Marcel <me@m4rc3l.de>
+Date: Sat, 4 May 2024 22:03:43 +0200
+Subject: [PATCH] UnicodeConverter: fix missing TRUE
+
+---
+ UnicodeConverter/UnicodeConverter.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/UnicodeConverter/UnicodeConverter.cpp b/UnicodeConverter/UnicodeConverter.cpp
+index 18f312dff7..30f72bb938 100644
+--- a/UnicodeConverter/UnicodeConverter.cpp
++++ b/UnicodeConverter/UnicodeConverter.cpp
+@@ -48,6 +48,8 @@
+ #include <windows.h>
+ #endif
+ 
++#define TRUE 1
++
+ std::string g_overrideIcuDataPath = "";
+ 
+ namespace NSUnicodeConverter
+-- 
+2.42.0
+

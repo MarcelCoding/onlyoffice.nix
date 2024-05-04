@@ -1,0 +1,25 @@
+From 663cd665a2e858cd2c0d5b619fe387d4229c9d7f Mon Sep 17 00:00:00 2001
+From: Marcel <me@m4rc3l.de>
+Date: Fri, 3 May 2024 18:36:26 +0200
+Subject: [PATCH] support modern gcc
+
+---
+ OOXML/XlsxFormat/Worksheets/SheetData.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/OOXML/XlsxFormat/Worksheets/SheetData.cpp b/OOXML/XlsxFormat/Worksheets/SheetData.cpp
+index da61370bf0..1009df6f06 100644
+--- a/OOXML/XlsxFormat/Worksheets/SheetData.cpp
++++ b/OOXML/XlsxFormat/Worksheets/SheetData.cpp
+@@ -67,6 +67,8 @@
+ #include <boost/date_time/gregorian/gregorian.hpp>
+ #include <boost/date_time/posix_time/posix_time.hpp>
+ 
++#include <cfloat>
++
+ using namespace XLS;
+ 
+ namespace OOX
+-- 
+2.42.0
+

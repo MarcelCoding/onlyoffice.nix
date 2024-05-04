@@ -1,0 +1,27 @@
+From 9bf9a6f6dbca224eda248ddee093c9b195556a08 Mon Sep 17 00:00:00 2001
+From: Marcel <me@m4rc3l.de>
+Date: Sun, 21 Apr 2024 15:19:30 +0200
+Subject: [PATCH 1/2] icu: link against system icu
+
+---
+ Common/3dParty/icu/icu.pri | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Common/3dParty/icu/icu.pri b/Common/3dParty/icu/icu.pri
+index c5ae929f8a..06bb923db0 100644
+--- a/Common/3dParty/icu/icu.pri
++++ b/Common/3dParty/icu/icu.pri
+@@ -13,8 +13,8 @@ core_windows {
+ core_linux {
+     INCLUDEPATH += $$PWD/$$CORE_BUILDS_PLATFORM_PREFIX/build/include
+ 
+-    LIBS        += $$PWD/$$CORE_BUILDS_PLATFORM_PREFIX/build/libicuuc.so.$$ICU_MAJOR_VER
+-    LIBS        += $$PWD/$$CORE_BUILDS_PLATFORM_PREFIX/build/libicudata.so.$$ICU_MAJOR_VER
++    LIBS        += -licuuc
++    LIBS        += -licudata
+ }
+ 
+ core_mac {
+-- 
+2.42.0
+

@@ -1,0 +1,46 @@
+From 841110b38a2b23550111fa39e81984e9f14a3cd2 Mon Sep 17 00:00:00 2001
+From: Marcel <me@m4rc3l.de>
+Date: Fri, 3 May 2024 22:26:22 +0200
+Subject: [PATCH] v8: remove depndency
+
+---
+ .../doctrenderer/js_internal/v8/v8_base.h        | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/DesktopEditor/doctrenderer/js_internal/v8/v8_base.h b/DesktopEditor/doctrenderer/js_internal/v8/v8_base.h
+index a6b5e332c3..6363963b49 100644
+--- a/DesktopEditor/doctrenderer/js_internal/v8/v8_base.h
++++ b/DesktopEditor/doctrenderer/js_internal/v8/v8_base.h
+@@ -24,7 +24,6 @@
+ #include "libplatform/libplatform.h"
+ 
+ #ifndef DISABLE_MEMORY_LIMITATION
+-#include "src/base/sys-info.h"
+ #endif
+ 
+ #ifdef V8_VERSION_89_PLUS
+@@ -191,13 +190,14 @@ public:
+ 		create_params.array_buffer_allocator = m_pAllocator;
+ 
+ #ifndef DISABLE_MEMORY_LIMITATION
+-		int64_t nMaxVirtualMemory = v8::base::SysInfo::AmountOfVirtualMemory();
+-		if (0 == nMaxVirtualMemory)
+-			nMaxVirtualMemory = 4000000000; // 4Gb
+-
+-		create_params.constraints.ConfigureDefaults(
+-					v8::base::SysInfo::AmountOfPhysicalMemory(),
+-					nMaxVirtualMemory);
++		// TODO: fix me
++		//int64_t nMaxVirtualMemory = v8::base::SysInfo::AmountOfVirtualMemory();
++		//if (0 == nMaxVirtualMemory)
++		//	nMaxVirtualMemory = 4000000000; // 4Gb
++
++		//create_params.constraints.ConfigureDefaults(
++		//			v8::base::SysInfo::AmountOfPhysicalMemory(),
++		//			nMaxVirtualMemory);
+ #endif
+ 
+ 		return v8::Isolate::New(create_params);
+-- 
+2.42.0
+
